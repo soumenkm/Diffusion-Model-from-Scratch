@@ -17,7 +17,7 @@ def load_checkpoint(device: str, checkpoint_path: Path) -> DiffusionModel:
     return model
 
 def main(device: str) -> None:
-    checkpoint_path = Path(Path.cwd(), "DDPM/outputs/ckpt/DDPM_train/1.00_1.0e-05/model_epoch_12.pt")
+    checkpoint_path = Path(Path.cwd(), "DDPM/outputs/ckpt/DDPM_train/celebhq_1.00_1.0e-05/model_epoch_90.pt")
     model = load_checkpoint(device=device, checkpoint_path=checkpoint_path)
     ds = DMDataset(data_dir='DDPM/data/celebHQ/celeba_hq_256', image_size=256, frac=1.0)
     x_0 = ds[0].unsqueeze(0)
